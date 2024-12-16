@@ -1,4 +1,7 @@
 import { useState } from "react"
+import ToDoInput from "./components/ToDoInput";
+import NewToDoBtn from "./components/NewToDoBtn";
+import List from "./components/List";
 
 export default function ToDoList(){
 
@@ -11,9 +14,9 @@ export default function ToDoList(){
     }
 
     function handleClick(){
-        console.log(todos)
-        const newTodos = todos;
-        console.log(newTodos)
+        todos.push(input);
+        setTodos([...todos])
+        setInput("");
        
     }
 
@@ -21,9 +24,10 @@ export default function ToDoList(){
         <div>
             <h3>To Do List</h3>
             <form action="">
-                <input type="text" name="input" onChange={handleChange} value={input}/>
-                <button type="button" onClick={handleClick}>add</button>
+                <ToDoInput handleChange={handleChange} input={input}/>
+                <NewToDoBtn handleClick={handleClick}/>
             </form>
+            <List todos={todos}/>
         </div>
     )
 }
