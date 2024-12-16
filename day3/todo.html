@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+</head>
+<body>
+    <script>
+        function addToList(){
+            const text = document.getElementById("text1").value;
+            const div = document.createElement("div");
+            const input = document.createElement("input");
+            const para = document.createElement("p");
+            const delBtn = document.createElement("button");
+            const editBtn = document.createElement("button");
+            const editInput = document.createElement("input");
+            editInput.style.display = "none";
+            div.style.display = "flex";
+            input.type = "checkbox";
+            editInput.type = "text";
+            delBtn.style.height="20px";
+            delBtn.style.alignSelf="center";
+            delBtn.style.marginLeft="8px";
+            editBtn.style.height="20px";
+            editBtn.style.alignSelf="center";
+            editBtn.style.marginLeft="8px";
+            editInput.style.height="20px";
+            editInput.style.alignSelf="center";
+            editInput.style.marginLeft="8px";
+            delBtn.addEventListener("click", remove);
+            input.addEventListener("click", markComplete);
+            editBtn.addEventListener("click", showEditInput);
+            editInput.addEventListener("change", editTodo);
+            div.append(input);
+            div.append(para);
+            div.append(delBtn);
+            div.append(editBtn);
+            div.append(editInput);
+            delBtn.textContent = "delete";
+            editBtn.textContent = "edit";
+            para.innerText = text;
+            document.getElementById("myUL").append(div);
+            document.getElementById("text1").value = "";
+        }
+
+        function markComplete(e){
+            e.target.checked ? this.nextSibling.style.textDecoration="line-through" : this.nextSibling.style.textDecoration = "none";
+        }
+
+        function remove(e){
+            this.parentElement.remove();
+        }
+
+        function showEditInput(e){
+            this.nextSibling.style.display = "flex";
+        }
+
+        function editTodo(e){
+            this.previousSibling.previousSibling.previousSibling.textContent = this.value;
+            this.style.display="none"
+        }
+
+    </script>
+    <h1>To Do List</h1>
+    <input type="text" id="text1" />
+    <button onclick="addToList()">Add to list</button>
+    <hr />
+    <ul id="myUL">
+        
+    </ul>
+</body>
+</html>

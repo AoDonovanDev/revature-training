@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Registration</h3>
+    <form>
+        <label for="name">Your name: </label>
+        <input type="text" 
+               id="name" 
+               name="name"
+               placeholder="Enter your name"
+               minlength="5"
+               required/> <br/>
+        <label for="pass">Your password: </label>
+        <input type="password" id="pass" name="pass"/> <br/>
+        <label for="age">Your age: </label>
+        <input type="number" id="age" name="age"/> <br/>
+        <label for="gender">Gender: </label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <br/>
+        <label>Choose your courses</label>
+        <input type="checkbox" name="math" value="math">Math
+        <input type="checkbox" name="science" value="science">Science
+        <input type="checkbox" name="literature" value="literature">Literature
+        <br/>
+        <label>Degree: </label>
+        <select name="degree" >
+            <option value="bscience">BS</option>
+            <option value="mscience">MS</option>
+            <option value="barts">BA</option>
+        </select>
+        <br/>
+        <label>Extracurriculars: </label>
+        <textarea name="comments" rows="5" cols="30"></textarea> <br/>
+        <input type="submit" value="Submit"> <br/>
+    </form>
+    <br/>
+    <a href="./welcome.html">back</a>
+</body>
+</html>

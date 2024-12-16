@@ -1,0 +1,18 @@
+td{
+    color: cornflowerblue
+}
+table{
+    border: solid 2px black;
+    border-radius: 2%;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+.grid-item{
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+}
