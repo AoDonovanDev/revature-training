@@ -3,6 +3,7 @@ import { Router, Route, BrowserRouter, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hello from './components/Hello';
 import ToDoList from './components/ToDoList/ToDoList';
+import JsonServerDemo from './components/JsonServerDemo';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
         <Routes>
             <Route path='/' element={<Navbar />}>
               <Route path='hello' element={<Hello />}/>
-              <Route path='todo' element={<ToDoList />}/>         
+              <Route path='todo' element={<ToDoList />}/>
+              <Route path='jsonserver' element={<JsonServerDemo />}/>            
             </Route>   
         </Routes>
       </BrowserRouter>
